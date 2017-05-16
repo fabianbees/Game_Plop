@@ -20,7 +20,32 @@ namespace Game_Plop
             dataGridView1.AllowUserToResizeRows = false;
             dataGridView1.AllowUserToResizeColumns = false;
 
-            createTable(9);
+            /*
+            //Hide Mouse
+            Rectangle BoundRect;
+            Rectangle OldRect = Cursor.Clip;
+            //Set Location
+            BoundRect = new Rectangle(50, 50, 1, 1);
+            Cursor.Clip = BoundRect;
+            Cursor.Hide();
+            //Application.AddMessageFilter(this);
+            */
+
+
+            //Set properties for dataGridView1
+            dataGridView1.AllowUserToResizeRows = false;
+            dataGridView1.AllowUserToResizeColumns = false;
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.AllowUserToOrderColumns = false;
+            dataGridView1.ReadOnly = true;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.CellSelect;     //Not sure if correct
+            dataGridView1.MultiSelect = false;
+
+
+
+
+            CreateTable(14);
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -28,7 +53,7 @@ namespace Game_Plop
 
         }
 
-        public void createTable(int size)
+        public void CreateTable(int size)
         {
             int formHeight = dataGridView1.Height;
             int formWidth = dataGridView1.Width;
