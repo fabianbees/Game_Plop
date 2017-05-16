@@ -26,8 +26,8 @@ namespace Game_Plop
             shredder.wuff();
             shredder.plop();
             //shredder = null;
-
-            //Test
+            //TEST über Browser
+            //TEST über VS
 
 
 
