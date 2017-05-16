@@ -20,7 +20,7 @@ namespace Game_Plop
             dataGridView1.AllowUserToResizeRows = false;
             dataGridView1.AllowUserToResizeColumns = false;
 
-            createTable(11);
+            createTable(9);
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
