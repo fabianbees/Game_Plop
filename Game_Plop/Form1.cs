@@ -17,9 +17,7 @@ namespace Game_Plop
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             
-            dataGridView1.AllowUserToResizeRows = false;
-            dataGridView1.AllowUserToResizeColumns = false;
-
+            
             /*
             //Hide Mouse
             Rectangle BoundRect;
@@ -45,7 +43,7 @@ namespace Game_Plop
 
 
 
-            CreateTable(14);
+            CreateTable(25);
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -57,6 +55,8 @@ namespace Game_Plop
         {
             int formHeight = dataGridView1.Height;
             int formWidth = dataGridView1.Width;
+            Console.WriteLine(formWidth.ToString());
+
             dataGridView1.RowTemplate.Height = formHeight / (size);
 
             for (int i=0; i < size; i++)
