@@ -55,7 +55,7 @@ namespace Game_Plop
         {
             int formHeight = dataGridView1.Height;
             int formWidth = dataGridView1.Width;
-            Console.WriteLine(formWidth.ToString());
+            //Console.WriteLine(formWidth.ToString());
 
             dataGridView1.RowTemplate.Height = formHeight / (size);
 
