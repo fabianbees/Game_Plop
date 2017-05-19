@@ -31,6 +31,7 @@ namespace Game_Plop
             //Application.AddMessageFilter(this);
             */
 
+            //Create DataGridView
             DataGridView dataGridView1 = new DataGridView();
 
             //Set properties for dataGridView1
@@ -45,29 +46,19 @@ namespace Game_Plop
 
 
             //Create Image (Background)
-            //TODO: rekursiver Pfad
-            //Image img = Image.FromFile(@"C:\Users\Fabian\Documents\Visual Studio 2017\Projects\Game_Plop\Game_Plop\textures\grass.jpg");
-            //Image img = Image.FromFile("C:\\Users\\Fabian\\Documents\\Visual Studio 2017\\Projects\\Game_Plop\\Game_Plop\\textures\\grass.jpg");
-
-            //Bitmap img = new Bitmap(Image.FromFile(@"C:\Users\Fabian\Documents\Visual Studio 2017\Projects\Game_Plop\Game_Plop\textures\grass.jpg"));
-
-            //object O = Resources.ResourceManager.GetObject("grass.jpg");
-
             Bitmap img = Properties.Resources.grass;
 
 
-
-
-
-
-
+            //CreateTable
             CreateTable(25, img);
         }
+
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
+
 
         public void CreateTable(int size, Image img)
         {
@@ -78,25 +69,9 @@ namespace Game_Plop
             dataGridView1.RowTemplate.Height = formHeight / (size);
 
 
-
-            //create a DataGridView Image Cell
-            //DataGridViewImageCell DGic = new DataGridViewImageCell();
-            //DGic.Value = img;
-
             // Create the DGV with an Image column
             this.Controls.Add(dataGridView1);
-            //DataGridViewImageColumn imageCol = new DataGridViewImageColumn();
-            //dataGridView1.Columns.Add(imageCol);
-
-
-            //Icon treeIcon = new Icon(this.GetType(), "tree.ico");
-            //DataGridViewImageColumn imgColumn = new DataGridViewImageColumn();
-            //imageCol.Image = img;
-            //imageCol.Name = "grass";
-            //imageCol.HeaderText = "Nice grass";
-            //dataGridView1.Columns.Insert(1, imageCol);
-
-
+            
 
             for (int i=0; i < size; i++)
             {
@@ -105,13 +80,6 @@ namespace Game_Plop
 
                 DataGridViewImageColumn imageCol = new DataGridViewImageColumn();
                 dataGridView1.Columns.Add(imageCol);
-
-
-
-                //dataGridView1.Columns.Add(imageCol);
-
-
-
 
 
 
@@ -124,12 +92,9 @@ namespace Game_Plop
                     dataGridView1.Rows.Add();
                     dataGridView1.Rows[x].Cells[i].Value = img;
                 }
-                
-
-
-
-
             }
+
+            // Testing
             //dataGridView1.Rows.Add(size);
             
             //dataGridView1.Rows[0].Cells[0].Value = img;
