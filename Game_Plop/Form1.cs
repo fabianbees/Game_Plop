@@ -54,7 +54,7 @@ namespace Game_Plop
         public void CreateTable(int size)
         {
             int formHeight = dataGridView1.Height;
-            int formWidth = dataGridView1.Width;
+            //int formWidth = dataGridView1.Width;                      // siehe column.Width = formWidth/(size);
             //Console.WriteLine(formWidth.ToString());
 
             dataGridView1.RowTemplate.Height = formHeight / (size);
@@ -63,7 +63,7 @@ namespace Game_Plop
             {
                 dataGridView1.Columns.Add(i.ToString(), i.ToString());
                 DataGridViewColumn column = dataGridView1.Columns[i];
-                column.Width = formWidth/(size);
+                //column.Width = formWidth/(size);                      // WIRD NICHT BENÖTIGT --> Eigenschaft der Tabelle "AutoSizeCollomnsMode" auf Fill
                 //column.DefaultHeaderCellType =    TODODODODODDO
             }
             dataGridView1.Rows.Add(size);
