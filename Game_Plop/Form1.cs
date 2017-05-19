@@ -69,8 +69,8 @@ namespace Game_Plop
             dataGridView1.RowTemplate.Height = formHeight / (size);
 
 
-            // Create the DGV with an Image column
-            this.Controls.Add(dataGridView1);
+            // Something ... ???
+            //this.Controls.Add(dataGridView1);
             
 
             for (int i=0; i < size; i++)
@@ -78,45 +78,22 @@ namespace Game_Plop
                 //dataGridView1.Columns.Add(i.ToString(), i.ToString());
                 //DataGridViewColumn column = dataGridView1.Columns[i];
 
+                //Use DataGridViewImageColumn to set images to the columns
                 DataGridViewImageColumn imageCol = new DataGridViewImageColumn();
                 dataGridView1.Columns.Add(imageCol);
 
 
-
-                //DataGridViewImageColumn col = dataGridView1.Columns[i];
                 //column.Width = formWidth/(size);                           // WIRD NICHT BENÖTIGT --> Eigenschaft der Tabelle "AutoSizeCollomnsMode" auf Fill
                 //column.DefaultHeaderCellType =    TODODODODODDO
 
+                
+                //Add Rows, Set images
                 for (int x=0; x < size; x++)
                 {
                     dataGridView1.Rows.Add();
                     dataGridView1.Rows[x].Cells[i].Value = img;
                 }
             }
-
-            // Testing
-            //dataGridView1.Rows.Add(size);
-            
-            //dataGridView1.Rows[0].Cells[0].Value = img;
-
-            //dataGridView1.Rows.Add(size);
-
-            //Add Grass background
-            //this.dataGridView1[0, 0] = DGic;
-
-
-            // Create the image
-            //Bitmap img;
-            //img = new Bitmap(@"D:\Windows\Zapotec.bmp");
-
-
-
-            // Add a row and set its value to the image
-            //dataGridView1.Rows.Add();
-            //dataGridView1.Rows[0].Cells[0].Value = img;
-
-
-
         }
 
 
