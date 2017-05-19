@@ -33,7 +33,17 @@ namespace Game_Plop
 		}
 
 
+        //Liefert X Koordinate zurück
+        public int getXvalue()
+        {
+            return position[0];
+        }
 
+        //Liefert Y Koordinate zurück
+        public int getYvalue()
+        {
+            return position[1];
+        }
 
 
 

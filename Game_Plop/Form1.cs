@@ -70,7 +70,8 @@ namespace Game_Plop
             
         }
 
-        public void CreateWolf()
+        //Just for testing
+        public void CreateWolf()            
         {
             //Moved from Program.cs
             //Console.WriteLine("IT work's!");
@@ -78,9 +79,14 @@ namespace Game_Plop
 
             Wolf shredder = new Wolf();
             Quest quest = new Quest("sub1", shredder);
-
             shredder.wuff(this);
             shredder.plop(this);
+
+            shredder.position[0] = 3;
+            shredder.position[1] = 9;
+            textBox1.Text += "Wolf X Koordinate:" + shredder.getXvalue().ToString() + Environment.NewLine;
+            textBox1.Text += "Wolf Y Koordinate:" + shredder.getYvalue().ToString() + Environment.NewLine;
+
         }
 
 
