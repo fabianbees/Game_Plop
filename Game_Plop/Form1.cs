@@ -52,18 +52,37 @@ namespace Game_Plop
             //CreateTable
             CreateTable(25, img);
 
+
+
             //TEST for Tree View
-            treetest();
+            Treetest();
+            //Create Wolf Object
+            CreateWolf();
 
         }
 
-        //Creates 3 Nodes on our TreeView
-        public void treetest()
+
+        //Creates 2 Nodes on our TreeView
+        public void Treetest()
         {
-            treeView1.Nodes.Add("Quest");
-            treeView1.Nodes.Add("Teilaufgabe 1");
-            treeView1.Nodes.Add("Teilaufgabe 2");
+            treeView1.Nodes.Add("Quest1");
+            treeView1.Nodes.Add("Klicke auf die Karte");
+            
         }
+
+        public void CreateWolf()
+        {
+            //Moved from Program.cs
+            //Console.WriteLine("IT work's!");
+            textBox1.Text = "IT work's" + Environment.NewLine;
+
+            Wolf shredder = new Wolf();
+            Quest quest = new Quest("sub1", shredder);
+
+            shredder.wuff(this);
+            shredder.plop(this);
+        }
+
 
 
         public void CreateTable(int size, Image img)
@@ -105,7 +124,8 @@ namespace Game_Plop
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            //Just for testing
+            treeView1.Nodes.Clear(); 
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -118,6 +138,5 @@ namespace Game_Plop
 
         }
     }
-
 
 }

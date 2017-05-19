@@ -20,16 +20,16 @@ namespace Game_Plop
 
 
 
-		public void die() {
-			plop();
+		public void die(Form1 form) {
+			plop(form);
 			/*if(Quest.id()==id){
 			Quest.completed(id);
 			}*/
 		}
 
-		public void plop() {
+		public void plop(Form1 form) {
 			OnRaiseCustomEvent(new CustomEventArgs("Did something"));
-			Console.WriteLine ("PLOP!");
+			form.textBox1.Text += "PLOP!" + Environment.NewLine;
 		}
 
 

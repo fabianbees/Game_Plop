@@ -4,7 +4,7 @@ namespace Game_Plop
 {
 	public abstract class Animal : Creature
 	{
-		public Animal ()
+        public Animal ()
 		{
 		}
 
