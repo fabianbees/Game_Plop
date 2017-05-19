@@ -51,11 +51,11 @@ namespace Game_Plop
 
             //CreateTable
             CreateTable(25, img);
-        }
 
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+            //TEST für Tree View
+            treeView1.Nodes.Add("Quest");
+            treeView1.Nodes.Add("Teilaufgabe 1");
+            treeView1.Nodes.Add("Teilaufgabe 2");
 
         }
 
@@ -97,8 +97,17 @@ namespace Game_Plop
         }
 
 
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
 
         private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
