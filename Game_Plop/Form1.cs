@@ -52,18 +52,24 @@ namespace Game_Plop
             //CreateTable
             CreateTable(25, img);
 
-            //TEST für Tree View
+            //TEST for Tree View
+            treetest();
+
+        }
+
+        //Creates 3 Nodes on our TreeView
+        public void treetest()
+        {
             treeView1.Nodes.Add("Quest");
             treeView1.Nodes.Add("Teilaufgabe 1");
             treeView1.Nodes.Add("Teilaufgabe 2");
-
         }
 
 
         public void CreateTable(int size, Image img)
         {
             int formHeight = dataGridView1.Height;
-            //int formWidth = dataGridView1.Width;                              // siehe column.Width = formWidth/(size);
+            //int formWidth = dataGridView1.Width;                              // see column.Width = formWidth/(size);
             //Console.WriteLine(formWidth.ToString());
 
             dataGridView1.RowTemplate.Height = formHeight / (size);
@@ -83,7 +89,7 @@ namespace Game_Plop
                 dataGridView1.Columns.Add(imageCol);
 
 
-                //column.Width = formWidth/(size);                           // WIRD NICHT BENÖTIGT --> Eigenschaft der Tabelle "AutoSizeCollomnsMode" auf Fill
+                //column.Width = formWidth/(size);                           // Not needed any more --> Table Properties "AutoSizeCollomnsMode" to Fill
                 //column.DefaultHeaderCellType =    TODODODODODDO
 
                 
