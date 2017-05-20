@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 
 namespace Game_Plop
 {
@@ -6,7 +7,11 @@ namespace Game_Plop
 	{
         public Wolf() {
 			id = "Wolf";
-			texture = id+".png";
+
+            //Create Wolf Texture
+            //Bitmap texture = Properties.Resources.wolf;
+
+            texture = id+".png";
 		}
 
 		public void wuff (Form1 form) {

@@ -82,8 +82,17 @@ namespace Game_Plop
             shredder.wuff(this);
             shredder.plop(this);
 
-            shredder.position[0] = 3;
-            shredder.position[1] = 9;
+            int x = 3;
+            int y = 9;
+
+            shredder.position[0] = x;
+            shredder.position[1] = y;
+
+            //Show Wolf on Map
+            // Add Wolf texture (now using plop.png for texting)
+            dataGridView1.Rows[y].Cells[x].Value = Properties.Resources.wolf;
+
+            
             textBox1.Text += "Wolf X Koordinate:" + shredder.getXvalue().ToString() + Environment.NewLine;
             textBox1.Text += "Wolf Y Koordinate:" + shredder.getYvalue().ToString() + Environment.NewLine;
 
