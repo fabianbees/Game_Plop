@@ -1,4 +1,8 @@
 ﻿using System;
+using System.Drawing;
+using System.Reflection;
+using System.Resources;
+using System.Windows.Forms;
 
 namespace Game_Plop
 {
@@ -45,10 +49,46 @@ namespace Game_Plop
             return position[1];
         }
 
+        public void ShowOnMap(int x, int y, String type, DataGridView dataGridView1)
+        {
+
+            //object obj = ResourceManager.GetObject(type, resourceCulture);
+
+            //var rm = new System.Resources.ResourceManager(((System.Reflection.Assembly)System.Reflection.Assembly.GetExecutingAssembly()).GetName().Name + ".Properties.Resources", ((System.Reflection.Assembly)System.Reflection.Assembly.GetExecutingAssembly()));
+
+            var rm = new System.Resources.ResourceManager(((System.Reflection.Assembly)System.Reflection.Assembly.GetExecutingAssembly()).GetName().Name + ".Properties.Resources", ((System.Reflection.Assembly)System.Reflection.Assembly.GetExecutingAssembly()));
+
+
+            //Create Texture
+            Bitmap img = (Bitmap)rm.GetObject(type);
+
+            //String test = "Properties.Resources." + type;
+
+            //var type1 = typeof(Properties.Resources);
+            //var property = type1.GetProperty(type, BindingFlags.Static | BindingFlags.NonPublic | BindingFlags.Public);
+            //var value = property.GetValue(null, null);
+
+
+            //ResourceManager rm = strings.ResourceManager;
+            //string someString = rm.GetString("someString");
+
+
+            //create Texture
+            //Bitmap texture = rm;
+            //Bitmap texture = ((System.Drawing.Bitmap)(obj));
+            //Bitmap texture = Properties.Resources.wolf;
+
+            //Bitmap texture = Properties.Resources.ResourceManager.GetString("", Properties.Resources);
+
+
+            //Show on Map
+            dataGridView1.Rows[y].Cells[x].Value = img;
+        }
 
 
 
-		protected virtual void OnRaiseCustomEvent(CustomEventArgs e)
+
+        protected virtual void OnRaiseCustomEvent(CustomEventArgs e)
 		{
 			// Make a temporary copy of the event to avoid possibility of
 			// a race condition if the last subscriber unsubscribes

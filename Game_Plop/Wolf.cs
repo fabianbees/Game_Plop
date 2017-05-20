@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Game_Plop
@@ -11,7 +12,7 @@ namespace Game_Plop
             //Create Wolf Texture
             //Bitmap texture = Properties.Resources.wolf;
 
-            texture = id+".png";
+            //texture = id+".png";
 		}
 
 		public void wuff (Form1 form) {
@@ -21,9 +22,6 @@ namespace Game_Plop
 
         public void ShowWulfOnMap(int x, int y, DataGridView dataGridView1)
         {
-            //Create DataGridView
-            //DataGridView dataGridView1 = new DataGridView();
-
             //Show Wolf on Map
             // Add Wolf texture (now using plop.png for texting)
             dataGridView1.Rows[y].Cells[x].Value = Properties.Resources.wolf;
