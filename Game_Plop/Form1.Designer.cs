@@ -52,13 +52,13 @@
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridView1.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.dataGridView1.Size = new System.Drawing.Size(1200, 1200);
+            this.dataGridView1.Size = new System.Drawing.Size(800, 800);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // treeView1
             // 
-            this.treeView1.Location = new System.Drawing.Point(1213, 9);
+            this.treeView1.Location = new System.Drawing.Point(813, 9);
             this.treeView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.treeView1.Name = "treeView1";
             this.treeView1.Size = new System.Drawing.Size(282, 332);
@@ -68,7 +68,7 @@
             // 
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBox1.Location = new System.Drawing.Point(13, 1214);
+            this.textBox1.Location = new System.Drawing.Point(9, 814);
             this.textBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
@@ -79,8 +79,7 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1680, 1396);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.treeView1);

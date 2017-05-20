@@ -19,7 +19,7 @@ namespace Game_Plop
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
 
-
+            
             /*
             //Hide Mouse
             Rectangle BoundRect;
