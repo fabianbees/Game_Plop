@@ -6,8 +6,8 @@ namespace Game_Plop
 	public class Avatar : Creature
 	{
 		public Avatar() {
-			id = "Avatar";
-			texture = id+".png";
+            TextureId = "avatar";
+			//texture = id+".png";
 		}
 
 		int[] inventory = new int[100];

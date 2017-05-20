@@ -7,8 +7,9 @@ namespace Game_Plop
 	public class Wolf : Animal
 	{
         public Wolf() {
-			String TextureId = "wolf";
-		}
+            TextureId = "wolf";
+
+        }
 
 		public void wuff (Form1 form) {
             form.textBox1.Text += "Wuff! Wuff!" + Environment.NewLine;

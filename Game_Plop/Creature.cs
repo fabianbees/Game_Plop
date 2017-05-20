@@ -13,11 +13,12 @@ namespace Game_Plop
 		public int health;
 		public int[] position = new int[2];
 		public string texture;
-		public string id;
+        //public String id;
+		public static String TextureId;
 
 		public Creature ()
 		{
-			
+			//TODO ...
 		}
 
 

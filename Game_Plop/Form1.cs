@@ -90,10 +90,9 @@ namespace Game_Plop
             shredder.position[1] = y;
 
             //Show Wolf on Map
-            //TODO: Add Wolf texture (now using plop.png for texting)
+            //TODO: Add a Wolf texture (now using plop.png for texting)
             //old version: shredder.ShowWulfOnMap(x, y, dataGridView1);
-            shredder.ShowOnMap(x, y, "wolf", dataGridView1);
-
+            shredder.ShowOnMap(x, y, Wolf.TextureId, dataGridView1);
 
             textBox1.Text += "Wolf X Koordinate:" + shredder.getXvalue().ToString() + Environment.NewLine;
             textBox1.Text += "Wolf Y Koordinate:" + shredder.getYvalue().ToString() + Environment.NewLine;
