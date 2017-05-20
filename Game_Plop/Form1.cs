@@ -20,7 +20,6 @@ namespace Game_Plop
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
 
 
-
             /*
             //Hide Mouse
             Rectangle BoundRect;
@@ -91,7 +90,6 @@ namespace Game_Plop
 
             //Show Wolf on Map
             //TODO: Add a Wolf texture (now using plop.png for texting)
-            //old version: shredder.ShowWulfOnMap(x, y, dataGridView1);
             shredder.ShowOnMap(x, y, Wolf.TextureId, dataGridView1);
 
             textBox1.Text += "Wolf X Koordinate:" + shredder.getXvalue().ToString() + Environment.NewLine;
