@@ -7,12 +7,7 @@ namespace Game_Plop
 	public class Wolf : Animal
 	{
         public Wolf() {
-			id = "Wolf";
-
-            //Create Wolf Texture
-            //Bitmap texture = Properties.Resources.wolf;
-
-            //texture = id+".png";
+			String TextureId = "wolf";
 		}
 
 		public void wuff (Form1 form) {
@@ -20,6 +15,7 @@ namespace Game_Plop
 
         }
 
+        // Not needed anymore, see Creature.cs ShowOnMap()
         public void ShowWulfOnMap(int x, int y, DataGridView dataGridView1)
         {
             //Show Wolf on Map

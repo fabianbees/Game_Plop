@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Drawing;
-using System.Reflection;
-using System.Resources;
 using System.Windows.Forms;
 
 namespace Game_Plop
@@ -51,38 +49,22 @@ namespace Game_Plop
 
         public void ShowOnMap(int x, int y, String type, DataGridView dataGridView1)
         {
+            try
+            {
+                var rm = new System.Resources.ResourceManager(((System.Reflection.Assembly)System.Reflection.Assembly.GetExecutingAssembly()).GetName().Name
+                    + ".Properties.Resources", ((System.Reflection.Assembly)System.Reflection.Assembly.GetExecutingAssembly()));
 
-            //object obj = ResourceManager.GetObject(type, resourceCulture);
+                //Create Texture
+                Bitmap img = (Bitmap)rm.GetObject(type);
 
-            //var rm = new System.Resources.ResourceManager(((System.Reflection.Assembly)System.Reflection.Assembly.GetExecutingAssembly()).GetName().Name + ".Properties.Resources", ((System.Reflection.Assembly)System.Reflection.Assembly.GetExecutingAssembly()));
+                //Show on Map
+                dataGridView1.Rows[y].Cells[x].Value = img;
 
-            var rm = new System.Resources.ResourceManager(((System.Reflection.Assembly)System.Reflection.Assembly.GetExecutingAssembly()).GetName().Name + ".Properties.Resources", ((System.Reflection.Assembly)System.Reflection.Assembly.GetExecutingAssembly()));
+            }
+            catch (Exception e)
+            {
 
-
-            //Create Texture
-            Bitmap img = (Bitmap)rm.GetObject(type);
-
-            //String test = "Properties.Resources." + type;
-
-            //var type1 = typeof(Properties.Resources);
-            //var property = type1.GetProperty(type, BindingFlags.Static | BindingFlags.NonPublic | BindingFlags.Public);
-            //var value = property.GetValue(null, null);
-
-
-            //ResourceManager rm = strings.ResourceManager;
-            //string someString = rm.GetString("someString");
-
-
-            //create Texture
-            //Bitmap texture = rm;
-            //Bitmap texture = ((System.Drawing.Bitmap)(obj));
-            //Bitmap texture = Properties.Resources.wolf;
-
-            //Bitmap texture = Properties.Resources.ResourceManager.GetString("", Properties.Resources);
-
-
-            //Show on Map
-            dataGridView1.Rows[y].Cells[x].Value = img;
+            }
         }
 
 
