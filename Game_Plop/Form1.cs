@@ -84,12 +84,11 @@ namespace Game_Plop
         public void CreateWolf()            
         {
             //Moved from Program.cs
-            textBox1.Text = "IT work's" + Environment.NewLine;
 
             Wolf shredder = new Wolf();
             Quest quest = new Quest("sub1", shredder);
             shredder.wuff(this);
-            shredder.plop(this);
+            //shredder.plop(this);
 
             int x = 3;
             int y = 9;
@@ -99,9 +98,6 @@ namespace Game_Plop
 
             //Show Wolf on Map
             shredder.ShowOnMap(Wolf.TextureId, dataGridView1);
-            textBox1.Text += "Wolf X Koordinate:" + shredder.getXvalue() + Environment.NewLine;
-            textBox1.Text += "Wolf Y Koordinate:" + shredder.getYvalue() + Environment.NewLine;
-            textBox1.Text += "Wolf Tag:" + dataGridView1.Rows[shredder.getYvalue()].Cells[shredder.getXvalue()].Tag + Environment.NewLine;
 
         }
 
