@@ -101,6 +101,7 @@ namespace Game_Plop
             shredder.ShowOnMap(Wolf.TextureId, dataGridView1);
             textBox1.Text += "Wolf X Koordinate:" + shredder.getXvalue() + Environment.NewLine;
             textBox1.Text += "Wolf Y Koordinate:" + shredder.getYvalue() + Environment.NewLine;
+            textBox1.Text += "Wolf Tag:" + dataGridView1.Rows[shredder.getYvalue()].Cells[shredder.getXvalue()].Tag + Environment.NewLine;
 
         }
 
@@ -152,24 +153,40 @@ namespace Game_Plop
                 if(e.KeyCode == Keys.Right)
                 {                 
                     me.MoveRight();
+                    if (dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag != null)
+                    {
+                        textBox1.Text += "Collision" + Environment.NewLine;
+                    }
                     me.ShowOnMap("avatar", dataGridView1);
                 }
                 else if (e.KeyCode == Keys.Left)
                 {
                     me.MoveLeft();
+                    if (dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag != null)
+                    {
+                        textBox1.Text += "Collision" + Environment.NewLine;
+                    }
                     me.ShowOnMap("avatar", dataGridView1);
                 }
                 else if (e.KeyCode == Keys.Up)
                 {
                     me.MoveUp();
+                    if (dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag != null)
+                    {
+                        textBox1.Text += "Collision" + Environment.NewLine;
+                    }
                     me.ShowOnMap("avatar", dataGridView1);
                 }
                 else if (e.KeyCode == Keys.Down)
                 {
                     me.MoveDown();
+                    if (dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag != null)
+                    {
+                        textBox1.Text += "Collision" + Environment.NewLine;
+                    }
                     me.ShowOnMap("avatar", dataGridView1);
                 }
-                
+
                 KeyisPressed = true;
             }
         }

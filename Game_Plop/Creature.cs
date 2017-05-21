@@ -73,6 +73,7 @@ namespace Game_Plop
 
                 //Show on Map
                 dataGridView1.Rows[getYvalue()].Cells[getXvalue()].Value = img;
+                dataGridView1.Rows[getYvalue()].Cells[getXvalue()].Tag = type;
 
             }
             catch (Exception e)
