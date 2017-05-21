@@ -145,7 +145,7 @@ namespace Game_Plop
         {
             if (!KeyisPressed)
             {
-                textBox1.Text += "TEST" + e.KeyCode + sender + Environment.NewLine;
+                //textBox1.Text += e.KeyCode + Environment.NewLine;
                 if(e.KeyCode == Keys.Right)
                 {                 
                     me.MoveRight();
