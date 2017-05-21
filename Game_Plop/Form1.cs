@@ -46,7 +46,8 @@ namespace Game_Plop
 
 
             //Create Image (Background)
-            Bitmap img = Properties.Resources.grass;
+            //Bitmap img = Properties.Resources.grass;
+            Bitmap img = new Bitmap(Properties.Resources.grass, new Size(30, 30));
 
 
             //CreateTable
