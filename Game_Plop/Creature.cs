@@ -60,7 +60,7 @@ namespace Game_Plop
                 Bitmap img = new Bitmap((Bitmap)rm.GetObject(type), new Size(30, 30));
 
                 //Show on Map
-                dataGridView1.Rows[this.getYvalue()].Cells[this.getXvalue()].Value = img;
+                dataGridView1.Rows[getYvalue()].Cells[getXvalue()].Value = img;
 
             }
             catch (Exception e)

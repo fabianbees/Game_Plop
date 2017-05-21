@@ -1,15 +1,16 @@
-﻿using Game_Plop.Properties;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using System;
 using System.Drawing;
+using System.Windows.Forms;
+/*
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
-
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using Game_Plop.Properties;
+*/
 namespace Game_Plop
 {
     public partial class Form1 : Form
@@ -59,6 +60,8 @@ namespace Game_Plop
             Treetest();
             //Create Wolf Object
             CreateWolf();
+            //Create Avatar
+            CreateAvatar();
 
         }
 
@@ -69,6 +72,15 @@ namespace Game_Plop
             treeView1.Nodes.Add("Quest1");
             treeView1.Nodes.Add("Klicke auf die Karte");
             
+        }
+
+        //Just for testing
+        public void CreateAvatar()
+        {
+            Avatar me = new Avatar();
+            me.position[0] = 10;
+            me.position[1] = 10;
+            me.ShowOnMap(Avatar.TextureId, dataGridView1);
         }
 
         //Just for testing
@@ -93,8 +105,9 @@ namespace Game_Plop
             //TODO: Add a Wolf texture (now using plop.png for texting)
             shredder.ShowOnMap(Wolf.TextureId, dataGridView1);
 
-            textBox1.Text += "Wolf X Koordinate:" + shredder.getXvalue().ToString() + Environment.NewLine;
-            textBox1.Text += "Wolf Y Koordinate:" + shredder.getYvalue().ToString() + Environment.NewLine;
+            //textBox1.Text += Avatar.TextureId + Environment.NewLine;
+            textBox1.Text += "Wolf X Koordinate:" + shredder.getXvalue() + Environment.NewLine;
+            textBox1.Text += "Wolf Y Koordinate:" + shredder.getYvalue() + Environment.NewLine;
 
         }
 
