@@ -1,16 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-/*
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using Game_Plop.Properties;
-*/
+
 namespace Game_Plop
 {
     public partial class Form1 : Form
@@ -21,8 +12,11 @@ namespace Game_Plop
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(keydown);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(keyup);
+            KeyPreview = true;
 
-            
+
             /*
             //Hide Mouse
             Rectangle BoundRect;
@@ -65,10 +59,6 @@ namespace Game_Plop
             //Create Avatar
             CreateAvatar();
 
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(keydown);
-            this.KeyUp += new System.Windows.Forms.KeyEventHandler(keyup);
-            KeyPreview = true;
-
         }
 
 
@@ -93,7 +83,6 @@ namespace Game_Plop
         public void CreateWolf()            
         {
             //Moved from Program.cs
-            //Console.WriteLine("IT work's!");
             textBox1.Text = "IT work's" + Environment.NewLine;
 
             Wolf shredder = new Wolf();
@@ -108,10 +97,7 @@ namespace Game_Plop
             shredder.position[1] = y;
 
             //Show Wolf on Map
-            //TODO: Add a Wolf texture (now using plop.png for texting)
             shredder.ShowOnMap(Wolf.TextureId, dataGridView1);
-
-            //textBox1.Text += Avatar.TextureId + Environment.NewLine;
             textBox1.Text += "Wolf X Koordinate:" + shredder.getXvalue() + Environment.NewLine;
             textBox1.Text += "Wolf Y Koordinate:" + shredder.getYvalue() + Environment.NewLine;
 
@@ -142,10 +128,7 @@ namespace Game_Plop
                 dataGridView1.Columns.Add(imageCol);
 
 
-                //column.Width = formWidth/(size);                           // Not needed any more --> Table Properties "AutoSizeCollomnsMode" to Fill
-                //column.DefaultHeaderCellType =    TODODODODODDO
-
-                
+                //column.Width = formWidth/(size);                           // Not needed any more --> Table Properties "AutoSizeCollomnsMode" to Fill                
                 //Add Rows, Set images
                 for (int x=0; x < size; x++)
                 {
@@ -165,25 +148,21 @@ namespace Game_Plop
                 textBox1.Text += "TEST" + e.KeyCode + sender + Environment.NewLine;
                 if(e.KeyCode == Keys.Right)
                 {                 
-                    //me.position[0]++;
                     me.MoveRight();
                     me.ShowOnMap(Avatar.TextureId, dataGridView1);
                 }
                 else if (e.KeyCode == Keys.Left)
                 {
-                    //me.position[0]--;
                     me.MoveLeft();
                     me.ShowOnMap(Avatar.TextureId, dataGridView1);
                 }
                 else if (e.KeyCode == Keys.Up)
                 {
-                    //me.position[1]--;
                     me.MoveUp();
                     me.ShowOnMap(Avatar.TextureId, dataGridView1);
                 }
                 else if (e.KeyCode == Keys.Down)
                 {
-                    //me.position[1]++;
                     me.MoveDown();
                     me.ShowOnMap(Avatar.TextureId, dataGridView1);
                 }
