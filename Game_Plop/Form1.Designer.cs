@@ -60,6 +60,7 @@
             // 
             // treeView1
             // 
+            this.treeView1.Enabled = false;
             this.treeView1.Location = new System.Drawing.Point(813, 9);
             this.treeView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.treeView1.Name = "treeView1";

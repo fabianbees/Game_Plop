@@ -11,7 +11,7 @@ namespace Game_Plop
 
 
 		public int health;
-		public int[] position = new int[2];
+		private int[] position = new int[2];
 		public string texture;
         //public String id;
 		public static String TextureId;
@@ -46,6 +46,18 @@ namespace Game_Plop
         public int getYvalue()
         {
             return position[1];
+        }
+
+        //Setzt X Koordinate
+        public void setXvalue(int x)
+        {
+            position[0] = x;
+        }
+
+        //Setzt Y Koordinate
+        public void setYvalue(int y)
+        {
+            position[1] = y;
         }
 
         public void ShowOnMap(String type, DataGridView dataGridView1)
@@ -89,6 +101,39 @@ namespace Game_Plop
 				handler(this, e);
 			}
 		}
-	}
+
+        public void MoveRight()
+        {
+            int x = this.getXvalue();
+            if (x < 24 && x >= 0)
+            {
+                this.position[0]++;
+            }
+        }
+        public void MoveLeft()
+        {
+            int x = this.getXvalue();
+            if (x <= 24 && x > 0)
+            {
+                this.position[0]--;
+            }
+        }
+        public void MoveUp()
+        {
+            int x = this.getYvalue();
+            if (x <= 24 && x > 0)
+            {
+                this.position[1]--;
+            }
+        }
+        public void MoveDown()
+        {
+            int x = this.getYvalue();
+            if (x < 24 && x >= 0)
+            {
+                this.position[1]++;
+            }
+        }
+    }
 }
 

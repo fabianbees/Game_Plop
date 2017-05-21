@@ -33,6 +33,7 @@ namespace Game_Plop
 		public void pick() {
 			//TODO
 		}
+        /*
         public void MoveRight()
         {
             int x = this.getXvalue();
@@ -65,6 +66,7 @@ namespace Game_Plop
                 this.position[1]++;
             }
         }
+        */
 
     }
 }

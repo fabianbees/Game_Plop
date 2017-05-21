@@ -75,8 +75,8 @@ namespace Game_Plop
         public void CreateAvatar()
         {
             
-            me.position[0] = 10;
-            me.position[1] = 10;
+            me.setXvalue(10);
+            me.setYvalue(10);
             me.ShowOnMap("avatar", dataGridView1);
         }
 
@@ -94,8 +94,8 @@ namespace Game_Plop
             int x = 3;
             int y = 9;
 
-            shredder.position[0] = x;
-            shredder.position[1] = y;
+            shredder.setXvalue(x);
+            shredder.setYvalue(y);
 
             //Show Wolf on Map
             shredder.ShowOnMap(Wolf.TextureId, dataGridView1);
