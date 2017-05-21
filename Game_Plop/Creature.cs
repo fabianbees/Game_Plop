@@ -48,7 +48,7 @@ namespace Game_Plop
             return position[1];
         }
 
-        public void ShowOnMap(int x, int y, String type, DataGridView dataGridView1)
+        public void ShowOnMap(String type, DataGridView dataGridView1)
         {
             try
             {
@@ -59,7 +59,7 @@ namespace Game_Plop
                 Bitmap img = (Bitmap)rm.GetObject(type);
 
                 //Show on Map
-                dataGridView1.Rows[y].Cells[x].Value = img;
+                dataGridView1.Rows[this.getYvalue()].Cells[this.getXvalue()].Value = img;
 
             }
             catch (Exception e)
