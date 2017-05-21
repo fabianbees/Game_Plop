@@ -151,38 +151,46 @@ namespace Game_Plop
             {
                 //textBox1.Text += e.KeyCode + Environment.NewLine;
                 if(e.KeyCode == Keys.Right)
-                {                 
+                {
+                    Bitmap img = new Bitmap(Properties.Resources.grass, new Size(30, 30));
+                    dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Value = img;
                     me.MoveRight();
                     if (dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag != null)
                     {
-                        textBox1.Text += "Collision" + Environment.NewLine;
+                        textBox1.Text += "Collision mit: " + dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag.ToString() + Environment.NewLine;
                     }
                     me.ShowOnMap("avatar", dataGridView1);
                 }
                 else if (e.KeyCode == Keys.Left)
                 {
+                    Bitmap img = new Bitmap(Properties.Resources.grass, new Size(30, 30));
+                    dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Value = img;
                     me.MoveLeft();
                     if (dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag != null)
                     {
-                        textBox1.Text += "Collision" + Environment.NewLine;
+                        textBox1.Text += "Collision mit: " + dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag.ToString() + Environment.NewLine;
                     }
                     me.ShowOnMap("avatar", dataGridView1);
                 }
                 else if (e.KeyCode == Keys.Up)
                 {
+                    Bitmap img = new Bitmap(Properties.Resources.grass, new Size(30, 30));
+                    dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Value = img;
                     me.MoveUp();
                     if (dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag != null)
                     {
-                        textBox1.Text += "Collision" + Environment.NewLine;
+                        textBox1.Text += "Collision mit: " + dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag.ToString() + Environment.NewLine;
                     }
                     me.ShowOnMap("avatar", dataGridView1);
                 }
                 else if (e.KeyCode == Keys.Down)
                 {
+                    Bitmap img = new Bitmap(Properties.Resources.grass, new Size(30, 30));
+                    dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Value = img;
                     me.MoveDown();
                     if (dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag != null)
                     {
-                        textBox1.Text += "Collision" + Environment.NewLine;
+                        textBox1.Text += "Collision mit: " + dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag.ToString() + Environment.NewLine;
                     }
                     me.ShowOnMap("avatar", dataGridView1);
                 }
