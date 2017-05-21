@@ -154,6 +154,7 @@ namespace Game_Plop
                 {
                     Bitmap img = new Bitmap(Properties.Resources.grass, new Size(30, 30));
                     dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Value = img;
+                    dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag = null;
                     me.MoveRight();
                     if (dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag != null)
                     {
@@ -165,6 +166,7 @@ namespace Game_Plop
                 {
                     Bitmap img = new Bitmap(Properties.Resources.grass, new Size(30, 30));
                     dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Value = img;
+                    dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag = null;
                     me.MoveLeft();
                     if (dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag != null)
                     {
@@ -176,6 +178,7 @@ namespace Game_Plop
                 {
                     Bitmap img = new Bitmap(Properties.Resources.grass, new Size(30, 30));
                     dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Value = img;
+                    dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag = null;
                     me.MoveUp();
                     if (dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag != null)
                     {
@@ -187,6 +190,7 @@ namespace Game_Plop
                 {
                     Bitmap img = new Bitmap(Properties.Resources.grass, new Size(30, 30));
                     dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Value = img;
+                    dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag = null;
                     me.MoveDown();
                     if (dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag != null)
                     {
