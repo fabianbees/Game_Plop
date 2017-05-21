@@ -165,22 +165,26 @@ namespace Game_Plop
                 textBox1.Text += "TEST" + e.KeyCode + sender + Environment.NewLine;
                 if(e.KeyCode == Keys.Right)
                 {                 
-                    me.position[0]++;
+                    //me.position[0]++;
+                    me.MoveRight();
                     me.ShowOnMap(Avatar.TextureId, dataGridView1);
                 }
                 else if (e.KeyCode == Keys.Left)
                 {
-                    me.position[0]--;
+                    //me.position[0]--;
+                    me.MoveLeft();
                     me.ShowOnMap(Avatar.TextureId, dataGridView1);
                 }
                 else if (e.KeyCode == Keys.Up)
                 {
-                    me.position[1]--;
+                    //me.position[1]--;
+                    me.MoveUp();
                     me.ShowOnMap(Avatar.TextureId, dataGridView1);
                 }
                 else if (e.KeyCode == Keys.Down)
                 {
-                    me.position[1]++;
+                    //me.position[1]++;
+                    me.MoveDown();
                     me.ShowOnMap(Avatar.TextureId, dataGridView1);
                 }
                 
