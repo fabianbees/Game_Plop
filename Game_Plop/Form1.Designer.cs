@@ -80,7 +80,7 @@
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1680, 1396);
+            this.ClientSize = new System.Drawing.Size(1680, 1053);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.treeView1);
             this.Controls.Add(this.dataGridView1);
