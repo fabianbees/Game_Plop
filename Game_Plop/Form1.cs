@@ -74,7 +74,7 @@ namespace Game_Plop
         //Just for testing
         public void CreateAvatar()
         {
-            
+            me.setHealth(100);
             me.setXvalue(10);
             me.setYvalue(10);
             me.ShowOnMap("avatar", dataGridView1);
@@ -159,6 +159,11 @@ namespace Game_Plop
                     if (dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag != null)
                     {
                         textBox1.Text += "Collision mit: " + dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag.ToString() + Environment.NewLine;
+                        button1.Enabled = true;
+                    }
+                    else
+                    {
+                        button1.Enabled = false;
                     }
                     me.ShowOnMap("avatar", dataGridView1);
                 }
@@ -171,6 +176,11 @@ namespace Game_Plop
                     if (dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag != null)
                     {
                         textBox1.Text += "Collision mit: " + dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag.ToString() + Environment.NewLine;
+                        button1.Enabled = true;
+                    }
+                    else
+                    {
+                        button1.Enabled = false;
                     }
                     me.ShowOnMap("avatar", dataGridView1);
                 }
@@ -183,6 +193,11 @@ namespace Game_Plop
                     if (dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag != null)
                     {
                         textBox1.Text += "Collision mit: " + dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag.ToString() + Environment.NewLine;
+                        button1.Enabled = true;
+                    }
+                    else
+                    {
+                        button1.Enabled = false;
                     }
                     me.ShowOnMap("avatar", dataGridView1);
                 }
@@ -195,6 +210,11 @@ namespace Game_Plop
                     if (dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag != null)
                     {
                         textBox1.Text += "Collision mit: " + dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag.ToString() + Environment.NewLine;
+                        button1.Enabled = true;
+                    }
+                    else
+                    {
+                        button1.Enabled = false;
                     }
                     me.ShowOnMap("avatar", dataGridView1);
                 }
@@ -223,6 +243,19 @@ namespace Game_Plop
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        //Button for fighting
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //Button for healing
+        private void button3_Click(object sender, EventArgs e)
+        {
+            me.heal();
+            textBox1.Text += "Gesundheit bei: " + me.getHealth() + Environment.NewLine;
         }
     }
 

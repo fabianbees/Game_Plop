@@ -10,7 +10,7 @@ namespace Game_Plop
 		public event EventHandler<CustomEventArgs> RaiseCustomEvent;
 
 
-		public int health;
+		private int health;
 		private int[] position = new int[2];
 		public string texture;
         //public String id;
@@ -58,6 +58,16 @@ namespace Game_Plop
         public void setYvalue(int y)
         {
             position[1] = y;
+        }
+
+        public int getHealth()
+        {
+            return health;
+        }
+
+        public void setHealth(int val)
+        {
+            health = val;
         }
 
         public void ShowOnMap(String type, DataGridView dataGridView1)
