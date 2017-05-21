@@ -11,6 +11,7 @@ namespace Game_Plop
         public Form1()
         {
             InitializeComponent();
+            //Initialize Key Events.
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(keydown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(keyup);
@@ -139,8 +140,10 @@ namespace Game_Plop
         }
 
 
+        //needed for Processing Keyevents
         private Boolean KeyisPressed;
 
+        //Process Key Events
         private void keydown(object sender, KeyEventArgs e)
         {
             if (!KeyisPressed)
@@ -171,6 +174,7 @@ namespace Game_Plop
             }
         }
 
+        //Make everthing ready for next Key Event
         private void keyup(object sender, KeyEventArgs e)
         {
             KeyisPressed = false;
