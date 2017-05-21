@@ -56,7 +56,8 @@ namespace Game_Plop
                     + ".Properties.Resources", ((System.Reflection.Assembly)System.Reflection.Assembly.GetExecutingAssembly()));
 
                 //Create Texture
-                Bitmap img = (Bitmap)rm.GetObject(type);
+                //Bitmap img = (Bitmap)rm.GetObject(type);
+                Bitmap img = new Bitmap((Bitmap)rm.GetObject(type), new Size(25, 25));
 
                 //Show on Map
                 dataGridView1.Rows[this.getYvalue()].Cells[this.getXvalue()].Value = img;
