@@ -66,8 +66,8 @@ namespace Game_Plop
         //Creates 2 Nodes on our TreeView
         public void Treetest()
         {
-            treeView1.Nodes.Add("Quest1");
-            treeView1.Nodes.Add("Nichts");
+            treeViewQuests.Nodes.Add("Quest1");
+            treeViewQuests.Nodes.Add("Nichts");
 
             //InventoryBox
             treeViewInventory.Nodes.Add("Inventory");
@@ -131,12 +131,12 @@ namespace Game_Plop
         //Process Key Events
         private void keydown(object sender, KeyEventArgs e)
         {
+            Bitmap img = new Bitmap(Properties.Resources.grass, new Size(30, 30));
             if (!KeyisPressed)
             {
                 //textBox1.Text += e.KeyCode + Environment.NewLine;
                 if(e.KeyCode == Keys.Right)
                 {
-                    Bitmap img = new Bitmap(Properties.Resources.grass, new Size(30, 30));
                     dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Value = img;
                     dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag = null;
                     me.MoveRight();
@@ -153,7 +153,6 @@ namespace Game_Plop
                 }
                 else if (e.KeyCode == Keys.Left)
                 {
-                    Bitmap img = new Bitmap(Properties.Resources.grass, new Size(30, 30));
                     dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Value = img;
                     dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag = null;
                     me.MoveLeft();
@@ -170,7 +169,6 @@ namespace Game_Plop
                 }
                 else if (e.KeyCode == Keys.Up)
                 {
-                    Bitmap img = new Bitmap(Properties.Resources.grass, new Size(30, 30));
                     dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Value = img;
                     dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag = null;
                     me.MoveUp();
@@ -187,7 +185,6 @@ namespace Game_Plop
                 }
                 else if (e.KeyCode == Keys.Down)
                 {
-                    Bitmap img = new Bitmap(Properties.Resources.grass, new Size(30, 30));
                     dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Value = img;
                     dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag = null;
                     me.MoveDown();

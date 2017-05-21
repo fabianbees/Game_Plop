@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.treeView1 = new System.Windows.Forms.TreeView();
+            this.treeViewQuests = new System.Windows.Forms.TreeView();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -62,14 +62,13 @@
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // treeView1
+            // treeViewQuests
             // 
-            this.treeView1.Enabled = false;
-            this.treeView1.Location = new System.Drawing.Point(813, 9);
-            this.treeView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(282, 332);
-            this.treeView1.TabIndex = 1;
+            this.treeViewQuests.Location = new System.Drawing.Point(813, 9);
+            this.treeViewQuests.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.treeViewQuests.Name = "treeViewQuests";
+            this.treeViewQuests.Size = new System.Drawing.Size(282, 332);
+            this.treeViewQuests.TabIndex = 1;
             // 
             // textBox1
             // 
@@ -131,7 +130,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.treeView1);
+            this.Controls.Add(this.treeViewQuests);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -149,7 +148,7 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.TreeView treeViewQuests;
         public System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
