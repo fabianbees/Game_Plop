@@ -77,7 +77,7 @@ namespace Game_Plop
             
             me.position[0] = 10;
             me.position[1] = 10;
-            me.ShowOnMap(Avatar.TextureId, dataGridView1);
+            me.ShowOnMap("avatar", dataGridView1);
         }
 
         //Just for testing
@@ -152,22 +152,22 @@ namespace Game_Plop
                 if(e.KeyCode == Keys.Right)
                 {                 
                     me.MoveRight();
-                    me.ShowOnMap(Avatar.TextureId, dataGridView1);
+                    me.ShowOnMap("avatar", dataGridView1);
                 }
                 else if (e.KeyCode == Keys.Left)
                 {
                     me.MoveLeft();
-                    me.ShowOnMap(Avatar.TextureId, dataGridView1);
+                    me.ShowOnMap("avatar", dataGridView1);
                 }
                 else if (e.KeyCode == Keys.Up)
                 {
                     me.MoveUp();
-                    me.ShowOnMap(Avatar.TextureId, dataGridView1);
+                    me.ShowOnMap("avatar", dataGridView1);
                 }
                 else if (e.KeyCode == Keys.Down)
                 {
                     me.MoveDown();
-                    me.ShowOnMap(Avatar.TextureId, dataGridView1);
+                    me.ShowOnMap("avatar", dataGridView1);
                 }
                 
                 KeyisPressed = true;

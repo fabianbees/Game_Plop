@@ -10,7 +10,7 @@ namespace Game_Plop
 			//texture = id+".png";
 		}
 
-		int[] inventory = new int[100];
+        int[] inventory = new int[100];
 		int[] weapons = new int[10];
 
 
