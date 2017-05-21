@@ -68,7 +68,9 @@ namespace Game_Plop
         {
             treeView1.Nodes.Add("Quest1");
             treeView1.Nodes.Add("Nichts");
-            
+
+            //InventoryBox
+            treeViewInventory.Nodes.Add("Inventory");
         }
 
         //Just for testing
