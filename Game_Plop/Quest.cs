@@ -15,8 +15,8 @@ namespace Game_Plop
 
 		void HandleCustomEvent(object sender, CustomEventArgs e)
 		{
-			Console.WriteLine(id + " received this message: {0}", e.Message);
-		}
+            //Form1.textBox1.Text += id + " received this message:" + e.Message + Environment.NewLine;
+        }
 	}
 }
 

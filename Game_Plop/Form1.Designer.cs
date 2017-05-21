@@ -44,10 +44,12 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersVisible = false;
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.dataGridView1.Enabled = false;
             this.dataGridView1.Location = new System.Drawing.Point(9, 9);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(0);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridView1.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;

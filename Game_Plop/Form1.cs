@@ -67,7 +67,7 @@ namespace Game_Plop
         public void Treetest()
         {
             treeView1.Nodes.Add("Quest1");
-            treeView1.Nodes.Add("Klicke auf die Karte");
+            treeView1.Nodes.Add("Nichts");
             
         }
 
@@ -183,8 +183,7 @@ namespace Game_Plop
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            //Just for testing
-            treeView1.Nodes.Clear(); 
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
