@@ -15,6 +15,8 @@ namespace Game_Plop
 {
     public partial class Form1 : Form
     {
+        Avatar me = new Avatar();
+
         public Form1()
         {
             InitializeComponent();
@@ -63,6 +65,10 @@ namespace Game_Plop
             //Create Avatar
             CreateAvatar();
 
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(keydown);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(keyup);
+            KeyPreview = true;
+
         }
 
 
@@ -77,7 +83,7 @@ namespace Game_Plop
         //Just for testing
         public void CreateAvatar()
         {
-            Avatar me = new Avatar();
+            
             me.position[0] = 10;
             me.position[1] = 10;
             me.ShowOnMap(Avatar.TextureId, dataGridView1);
@@ -147,6 +153,44 @@ namespace Game_Plop
                     dataGridView1.Rows[x].Cells[i].Value = img;
                 }
             }
+        }
+
+
+        private Boolean KeyisPressed;
+
+        private void keydown(object sender, KeyEventArgs e)
+        {
+            if (!KeyisPressed)
+            {
+                textBox1.Text += "TEST" + e.KeyCode + sender + Environment.NewLine;
+                if(e.KeyCode == Keys.Right)
+                {                 
+                    me.position[0]++;
+                    me.ShowOnMap(Avatar.TextureId, dataGridView1);
+                }
+                else if (e.KeyCode == Keys.Left)
+                {
+                    me.position[0]--;
+                    me.ShowOnMap(Avatar.TextureId, dataGridView1);
+                }
+                else if (e.KeyCode == Keys.Up)
+                {
+                    me.position[1]--;
+                    me.ShowOnMap(Avatar.TextureId, dataGridView1);
+                }
+                else if (e.KeyCode == Keys.Down)
+                {
+                    me.position[1]++;
+                    me.ShowOnMap(Avatar.TextureId, dataGridView1);
+                }
+                
+                KeyisPressed = true;
+            }
+        }
+
+        private void keyup(object sender, KeyEventArgs e)
+        {
+            KeyisPressed = false;
         }
 
 
