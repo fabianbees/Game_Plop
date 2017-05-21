@@ -70,6 +70,14 @@ namespace Game_Plop
             health = val;
         }
 
+        public void initialize(int x, int y, int health, String type, DataGridView dataGridView1)
+        {
+            this.setXvalue(x);
+            this.setYvalue(y);
+            this.setHealth(health);
+            this.ShowOnMap(type, dataGridView1);
+        }
+
         public void ShowOnMap(String type, DataGridView dataGridView1)
         {
             try

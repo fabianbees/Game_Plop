@@ -74,10 +74,7 @@ namespace Game_Plop
         //Just for testing
         public void CreateAvatar()
         {
-            me.setHealth(100);
-            me.setXvalue(10);
-            me.setYvalue(10);
-            me.ShowOnMap("avatar", dataGridView1);
+            me.initialize(10, 10, 100, "avatar", dataGridView1);
         }
 
         //Just for testing
@@ -89,15 +86,7 @@ namespace Game_Plop
             Quest quest = new Quest("sub1", shredder);
             shredder.wuff(this);
             //shredder.plop(this);
-
-            int x = 3;
-            int y = 9;
-
-            shredder.setXvalue(x);
-            shredder.setYvalue(y);
-
-            //Show Wolf on Map
-            shredder.ShowOnMap(Wolf.TextureId, dataGridView1);
+            shredder.initialize(3, 9, 50, Wolf.TextureId, dataGridView1);
 
         }
 
@@ -107,10 +96,8 @@ namespace Game_Plop
         {
             int formHeight = dataGridView1.Height;
             //int formWidth = dataGridView1.Width;                              // see column.Width = formWidth/(size);
-            //Console.WriteLine(formWidth.ToString());
 
             dataGridView1.RowTemplate.Height = formHeight / (size);
-
 
             // Something ... ???
             //this.Controls.Add(dataGridView1);
@@ -124,7 +111,6 @@ namespace Game_Plop
                 //Use DataGridViewImageColumn to set images to the columns
                 DataGridViewImageColumn imageCol = new DataGridViewImageColumn();
                 dataGridView1.Columns.Add(imageCol);
-
 
                 //column.Width = formWidth/(size);                           // Not needed any more --> Table Properties "AutoSizeCollomnsMode" to Fill                
                 //Add Rows, Set images
@@ -154,7 +140,7 @@ namespace Game_Plop
                     me.MoveRight();
                     if (dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag != null)
                     {
-                        textBox1.Text += "Collision mit: " + dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag.ToString() + Environment.NewLine;
+                        textBox1.Text += "Collision with: " + dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag.ToString() + Environment.NewLine;
                         button1.Enabled = true;
                     }
                     else
@@ -171,7 +157,7 @@ namespace Game_Plop
                     me.MoveLeft();
                     if (dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag != null)
                     {
-                        textBox1.Text += "Collision mit: " + dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag.ToString() + Environment.NewLine;
+                        textBox1.Text += "Collision with: " + dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag.ToString() + Environment.NewLine;
                         button1.Enabled = true;
                     }
                     else
@@ -188,7 +174,7 @@ namespace Game_Plop
                     me.MoveUp();
                     if (dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag != null)
                     {
-                        textBox1.Text += "Collision mit: " + dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag.ToString() + Environment.NewLine;
+                        textBox1.Text += "Collision with: " + dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag.ToString() + Environment.NewLine;
                         button1.Enabled = true;
                     }
                     else
@@ -205,7 +191,7 @@ namespace Game_Plop
                     me.MoveDown();
                     if (dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag != null)
                     {
-                        textBox1.Text += "Collision mit: " + dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag.ToString() + Environment.NewLine;
+                        textBox1.Text += "Collision with: " + dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag.ToString() + Environment.NewLine;
                         button1.Enabled = true;
                     }
                     else
