@@ -77,6 +77,7 @@ namespace Game_Plop
         public void CreateAvatar()
         {
             me.initialize(10, 10, 100, "avatar", dataGridView1);
+            progressBarHealth.Value = me.getHealth();
         }
 
         //Just for testing

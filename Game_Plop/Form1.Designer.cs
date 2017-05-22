@@ -36,7 +36,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.treeViewInventory = new System.Windows.Forms.TreeView();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.progressBarHealth = new System.Windows.Forms.ProgressBar();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -123,13 +123,13 @@
             this.treeViewInventory.Size = new System.Drawing.Size(282, 332);
             this.treeViewInventory.TabIndex = 6;
             // 
-            // progressBar1
+            // progressBarHealth
             // 
-            this.progressBar1.Location = new System.Drawing.Point(856, 687);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(239, 23);
-            this.progressBar1.TabIndex = 7;
-            this.progressBar1.Value = 100;
+            this.progressBarHealth.Location = new System.Drawing.Point(856, 687);
+            this.progressBarHealth.Name = "progressBarHealth";
+            this.progressBarHealth.Size = new System.Drawing.Size(239, 23);
+            this.progressBarHealth.TabIndex = 7;
+            this.progressBarHealth.Value = 100;
             // 
             // label1
             // 
@@ -143,9 +143,9 @@
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1680, 1053);
+            this.ClientSize = new System.Drawing.Size(1127, 964);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.progressBar1);
+            this.Controls.Add(this.progressBarHealth);
             this.Controls.Add(this.treeViewInventory);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -175,7 +175,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TreeView treeViewInventory;
-        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.ProgressBar progressBarHealth;
         private System.Windows.Forms.Label label1;
     }
 }
