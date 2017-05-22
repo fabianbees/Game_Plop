@@ -36,6 +36,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.treeViewInventory = new System.Windows.Forms.TreeView();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -86,7 +88,7 @@
             // button1
             // 
             this.button1.Enabled = false;
-            this.button1.Location = new System.Drawing.Point(812, 687);
+            this.button1.Location = new System.Drawing.Point(812, 716);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(89, 23);
             this.button1.TabIndex = 3;
@@ -97,7 +99,7 @@
             // button2
             // 
             this.button2.Enabled = false;
-            this.button2.Location = new System.Drawing.Point(907, 687);
+            this.button2.Location = new System.Drawing.Point(907, 716);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(89, 23);
             this.button2.TabIndex = 4;
@@ -106,7 +108,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(1002, 687);
+            this.button3.Location = new System.Drawing.Point(1002, 716);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(93, 23);
             this.button3.TabIndex = 5;
@@ -121,10 +123,29 @@
             this.treeViewInventory.Size = new System.Drawing.Size(282, 332);
             this.treeViewInventory.TabIndex = 6;
             // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(856, 687);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(239, 23);
+            this.progressBar1.TabIndex = 7;
+            this.progressBar1.Value = 100;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(812, 692);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(38, 13);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Health";
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1680, 1053);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.treeViewInventory);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -154,6 +175,8 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TreeView treeViewInventory;
+        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.Label label1;
     }
 }
 
