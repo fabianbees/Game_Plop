@@ -33,40 +33,6 @@ namespace Game_Plop
 		public void pick() {
 			//TODO
 		}
-        /*
-        public void MoveRight()
-        {
-            int x = this.getXvalue();
-            if(x < 24 && x >= 0)
-            {
-                this.position[0]++;
-            }
-        }
-        public void MoveLeft()
-        {
-            int x = this.getXvalue();
-            if (x <= 24 && x > 0)
-            {
-                this.position[0]--;
-            }
-        }
-        public void MoveUp()
-        {
-            int x = this.getYvalue();
-            if (x <= 24 && x > 0)
-            {
-                this.position[1]--;
-            }
-        }
-        public void MoveDown()
-        {
-            int x = this.getYvalue();
-            if (x < 24 && x >= 0)
-            {
-                this.position[1]++;
-            }
-        }
-        */
 
     }
 }

@@ -93,6 +93,10 @@ namespace Game_Plop
 
         }
 
+        public void updateHealth(int i)
+        {
+            progressBarHealth.Value = i;
+        }
 
 
         public void CreateTable(int size, Image img)

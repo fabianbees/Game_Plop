@@ -128,6 +128,7 @@
             this.progressBarHealth.Location = new System.Drawing.Point(856, 687);
             this.progressBarHealth.Name = "progressBarHealth";
             this.progressBarHealth.Size = new System.Drawing.Size(239, 23);
+            this.progressBarHealth.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.progressBarHealth.TabIndex = 7;
             this.progressBarHealth.Value = 100;
             // 
@@ -175,8 +176,8 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TreeView treeViewInventory;
-        private System.Windows.Forms.ProgressBar progressBarHealth;
         private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.ProgressBar progressBarHealth;
     }
 }
 
