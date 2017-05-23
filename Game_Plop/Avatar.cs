@@ -1,5 +1,5 @@
 ﻿using System;
-
+using System.Collections.Generic;
 
 namespace Game_Plop
 {
@@ -10,16 +10,17 @@ namespace Game_Plop
 			//texture = id+".png";
 		}
 
-        int[] inventory = new int[100];
-		int[] weapons = new int[10];
+        // int[] inventory = new int[100];
+        public List<string> inventory = new List<string>();
+        int[] weapons = new int[10];
 
 
 		public void walk() {
-			//TODO
+			//moved to Form1
 		}
 
-		public void heal() {
-			//TODO
+		public void heal(Form1 form) {
+           form.updateHealth(getHealth() + 10);
 		}
 
 		public void attack() {
@@ -30,8 +31,8 @@ namespace Game_Plop
 			//TODO
 		}
 
-		public void pick() {
-			//TODO
+		public void pick(int itemID) {
+            //moved to Form1
 		}
 
     }

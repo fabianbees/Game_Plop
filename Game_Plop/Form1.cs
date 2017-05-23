@@ -101,6 +101,7 @@ namespace Game_Plop
             {
                 //die
                 progressBarHealth.Value = 0;
+                me.setHealth(0);
                 textBox1.Text += "You died. Game Over!" + Environment.NewLine;
 
             }
@@ -111,6 +112,7 @@ namespace Game_Plop
                     i = progressBarHealth.Maximum;
                 }
                 progressBarHealth.Value = i;
+                me.setHealth(i);
             }
         }
 
@@ -258,14 +260,21 @@ namespace Game_Plop
             int damage = random.Next(10, 50);
             textBox1.Text += "fight " + collisionObject + " - Health: -" + damage + Environment.NewLine;
             textBox1.Text += "Gesundheit - " + avatarDamage + Environment.NewLine;
-            updateHealth(progressBarHealth.Value - avatarDamage);
+            updateHealth(progressBarHealth.Value - avatarDamage);   //Subtract random damage from Avatar health
+            
         }
 
         //Button for healing
         private void button3_Click(object sender, EventArgs e)
         {
-            me.heal();
+            me.heal(this);
             textBox1.Text += "Gesundheit bei: " + me.getHealth() + Environment.NewLine;
+        }
+
+        //Button for collecting items
+        private void button2_Click(object sender, EventArgs e)
+        {
+            me.inventory.Add(collisionObject);
         }
     }
 
