@@ -47,6 +47,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Plop.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -107,6 +110,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\avatar.png" />
+    <Content Include="Plop.ico" />
     <Content Include="Resources\grass.jpg" />
     <Content Include="Resources\Plop.png" />
     <None Include="Resources\wolf.png" />
