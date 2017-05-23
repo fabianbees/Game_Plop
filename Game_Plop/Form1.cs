@@ -7,6 +7,8 @@ namespace Game_Plop
     public partial class Form1 : Form
     {
         Avatar me = new Avatar();
+        public string collisionObject;  //Object the avatar collides with
+        Random random = new Random();   //Random damage during attack
 
         public Form1()
         {
@@ -95,7 +97,21 @@ namespace Game_Plop
 
         public void updateHealth(int i)
         {
-            progressBarHealth.Value = i;
+            if (i < 1)
+            {
+                //die
+                progressBarHealth.Value = 0;
+                textBox1.Text += "You died. Game Over!" + Environment.NewLine;
+
+            }
+            else
+            {
+                if (i >= progressBarHealth.Maximum)
+                {
+                    i = progressBarHealth.Maximum;
+                }
+                progressBarHealth.Value = i;
+            }
         }
 
 
@@ -148,6 +164,7 @@ namespace Game_Plop
                     if (dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag != null)
                     {
                         textBox1.Text += "Collision with: " + dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag.ToString() + Environment.NewLine;
+                        collisionObject = dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag.ToString();
                         button1.Enabled = true;
                     }
                     else
@@ -164,6 +181,7 @@ namespace Game_Plop
                     if (dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag != null)
                     {
                         textBox1.Text += "Collision with: " + dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag.ToString() + Environment.NewLine;
+                        collisionObject = dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag.ToString();
                         button1.Enabled = true;
                     }
                     else
@@ -180,6 +198,7 @@ namespace Game_Plop
                     if (dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag != null)
                     {
                         textBox1.Text += "Collision with: " + dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag.ToString() + Environment.NewLine;
+                        collisionObject = dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag.ToString();
                         button1.Enabled = true;
                     }
                     else
@@ -196,6 +215,7 @@ namespace Game_Plop
                     if (dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag != null)
                     {
                         textBox1.Text += "Collision with: " + dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag.ToString() + Environment.NewLine;
+                        collisionObject = dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag.ToString();
                         button1.Enabled = true;
                     }
                     else
@@ -234,7 +254,11 @@ namespace Game_Plop
         //Button for fighting
         private void button1_Click(object sender, EventArgs e)
         {
-
+            int avatarDamage = random.Next(10, 40);
+            int damage = random.Next(10, 50);
+            textBox1.Text += "fight " + collisionObject + " - Health: -" + damage + Environment.NewLine;
+            textBox1.Text += "Gesundheit - " + avatarDamage + Environment.NewLine;
+            updateHealth(progressBarHealth.Value - avatarDamage);
         }
 
         //Button for healing
