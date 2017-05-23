@@ -260,7 +260,18 @@ namespace Game_Plop
         {
             int avatarDamage = random.Next(10, 40);
             int damage = random.Next(10, 50);
-            textBox1.Text += "fight " + collisionObject + " - Health: -" + damage + Environment.NewLine;
+            int enemyHealth = shredder.getHealth() - damage;  //Just for testing
+            if (enemyHealth < 1)
+            {
+                //enemy died
+                enemyHealth = 0;
+                //drop something
+
+                //respawn
+                shredder.initialize(6, 9, 50, Wolf.TextureId, dataGridView1);
+            }
+            shredder.setHealth(enemyHealth);
+            textBox1.Text += "fight " + collisionObject + " - Health: " + enemyHealth + Environment.NewLine;
             textBox1.Text += "Gesundheit - " + avatarDamage + Environment.NewLine;
             updateHealth(progressBarHealth.Value - avatarDamage);   //Subtract random damage from Avatar health
             
