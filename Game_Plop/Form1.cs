@@ -7,6 +7,7 @@ namespace Game_Plop
     public partial class Form1 : Form
     {
         Avatar me = new Avatar();
+        Wolf shredder = new Wolf();
         public string collisionObject;  //Object the avatar collides with
         Random random = new Random();   //Random damage during attack
 
@@ -87,7 +88,8 @@ namespace Game_Plop
         {
             //Moved from Program.cs
 
-            Wolf shredder = new Wolf();
+            //now global
+            //Wolf shredder = new Wolf();
             Quest quest = new Quest("sub1", shredder);
             shredder.wuff(this);
             //shredder.plop(this);
