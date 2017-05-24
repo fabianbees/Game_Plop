@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace Game_Plop
 {
@@ -8,9 +9,12 @@ namespace Game_Plop
     {
         Avatar me = new Avatar();
         Wolf shredder = new Wolf();
+        WildBoar boar = new WildBoar();
+        Bear beer = new Bear();
         public string collisionObject;  //Object the avatar collides with
         Random random = new Random();   //Random damage during attack
         bool KeyLocked = false;
+        int cool = 0;
 
         public Form1()
         {
@@ -20,6 +24,7 @@ namespace Game_Plop
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(keydown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(keyup);
             KeyPreview = true;
+            button3.Enabled = false;
 
 
             /*
@@ -62,8 +67,8 @@ namespace Game_Plop
 
             //TEST for Tree View
             Treetest();
-            //Create Wolf Object
-            CreateWolf();
+            //Create             
+            CreateCreatures();
             //Create Avatar
             CreateAvatar();
 
@@ -73,11 +78,8 @@ namespace Game_Plop
         //Creates 2 Nodes on our TreeView
         public void Treetest()
         {
-            treeViewQuests.Nodes.Add("Quest1");
-            treeViewQuests.Nodes.Add("Nichts");
-
             //InventoryBox
-            treeViewInventory.Nodes.Add("Inventory");
+            treeViewInventory.Nodes.Add("Inventory:");
         }
 
         //Just for testing
@@ -88,7 +90,7 @@ namespace Game_Plop
         }
 
         //Just for testing
-        public void CreateWolf()            
+        public void CreateCreatures()            
         {
             //Moved from Program.cs
 
@@ -97,8 +99,12 @@ namespace Game_Plop
             Quest quest = new Quest("sub1", shredder);
             shredder.wuff(this);
             //shredder.plop(this);
-            shredder.initialize(3, 9, 50, Wolf.TextureId, dataGridView1);
+            shredder.initialize(3, 9, 50, "wolf", dataGridView1);
             quest.LoadQuest(this);
+            beer.initialize(19, 1, 50, "bear", dataGridView1);
+            boar.initialize(20, 18, 100, "wildboar", dataGridView1);
+
+            
         }
 
         public void updateHealth(int i)
@@ -167,79 +173,41 @@ namespace Game_Plop
             Bitmap img = new Bitmap(Properties.Resources.grass, new Size(30, 30));
             if (!KeyisPressed && !KeyLocked)
             {
-                //textBox1.Text += e.KeyCode + Environment.NewLine;
                 if(e.KeyCode == Keys.Right)
                 {
                     dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Value = img;
                     dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag = null;
                     me.MoveRight();
-                    if (dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag != null)
-                    {
-                        textBox1.Text += "Collision with: " + dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag.ToString() + Environment.NewLine;
-                        collisionObject = dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag.ToString();
-                        button1.Enabled = true;
-                        KeyLocked = true;
-                    }
-                    else
-                    {
-                        button1.Enabled = false;
-                    }
-                    me.ShowOnMap("avatar", dataGridView1);
                 }
                 else if (e.KeyCode == Keys.Left)
                 {
                     dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Value = img;
                     dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag = null;
                     me.MoveLeft();
-                    if (dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag != null)
-                    {
-                        textBox1.Text += "Collision with: " + dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag.ToString() + Environment.NewLine;
-                        collisionObject = dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag.ToString();
-                        button1.Enabled = true;
-                        KeyLocked = true;
-                    }
-                    else
-                    {
-                        button1.Enabled = false;
-                    }
-                    me.ShowOnMap("avatar", dataGridView1);
                 }
                 else if (e.KeyCode == Keys.Up)
                 {
                     dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Value = img;
                     dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag = null;
                     me.MoveUp();
-                    if (dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag != null)
-                    {
-                        textBox1.Text += "Collision with: " + dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag.ToString() + Environment.NewLine;
-                        collisionObject = dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag.ToString();
-                        button1.Enabled = true;
-                        KeyLocked = true;
-                    }
-                    else
-                    {
-                        button1.Enabled = false;
-                    }
-                    me.ShowOnMap("avatar", dataGridView1);
                 }
                 else if (e.KeyCode == Keys.Down)
                 {
                     dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Value = img;
                     dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag = null;
                     me.MoveDown();
-                    if (dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag != null)
-                    {
-                        textBox1.Text += "Collision with: " + dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag.ToString() + Environment.NewLine;
-                        collisionObject = dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag.ToString();
-                        button1.Enabled = true;
-                        KeyLocked = true;
-                    }
-                    else
-                    {
-                        button1.Enabled = false;
-                    }
-                    me.ShowOnMap("avatar", dataGridView1);
                 }
+                if (dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag != null)
+                {
+                    collisionObject = dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag.ToString();
+                    button1.Enabled = true;
+                    KeyLocked = true;
+                }
+                else
+                {
+                    button1.Enabled = false;
+                }
+                me.ShowOnMap("avatar", dataGridView1);
                 textBox1_TextChanged(sender, e);
                 KeyisPressed = true;
             }
@@ -280,26 +248,30 @@ namespace Game_Plop
                 //enemy died
                 enemyHealth = 0;
                 button1.Enabled = false;
-                //drop something
 
-                //respawn
-                //shredder.initialize(9, 17, 50, Wolf.TextureId, dataGridView1);
-                /*shredder.setHealth(50);
-                shredder.MoveDown();
-                shredder.MoveRight();
-                shredder.ShowOnMap(Wolf.TextureId, dataGridView1);
-                */
-                shredder.respawn(Wolf.TextureId, dataGridView1);
+                shredder.respawn("wolf", dataGridView1);
                 KeyLocked = false;
+                //bitte wegsschauen! Ist scheiße gemacht :)
+
+                XmlDocument questXML = new XmlDocument();
+                questXML.Load("C:\\Users\\fabia\\Documents\\Visual Studio 2017\\Projects\\Game_Plop\\Game_Plop\\testquest.xml");
+
+                QuestObject quest = new QuestObject(questXML, this, false);
+                quest.didSomething(this);
+                treeViewInventory.Nodes.Add("Fleisch");
+                button3.Enabled = true;
+                //Hier weiter...
             }
             else
-           {
+            {
                 shredder.setHealth(enemyHealth);
             }
             textBox1.Text += "fight " + collisionObject + " - Health: " + enemyHealth + Environment.NewLine;
             textBox1.Text += "Gesundheit - " + avatarDamage + Environment.NewLine;
             updateHealth(progressBarHealth.Value - avatarDamage);   //Subtract random damage from Avatar health
+
             textBox1_TextChanged(sender, e);
+
 
         }
 
@@ -309,6 +281,14 @@ namespace Game_Plop
             me.heal(this);
             textBox1.Text += "Gesundheit bei: " + me.getHealth() + Environment.NewLine;
             textBox1_TextChanged(sender, e);
+            cool++;
+            if(cool > 2)
+            {
+                button3.Enabled = false;
+                treeViewInventory.Nodes.Clear();
+                treeViewInventory.Nodes.Add("Inventory:");
+                cool = 0;
+            }
         }
 
         //Button for collecting items

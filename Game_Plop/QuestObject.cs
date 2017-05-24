@@ -13,14 +13,22 @@ namespace Game_Plop
         public string story_intro;
         public string story_outro;
 
-        public QuestObject (XmlDocument doc, Form1 form)
+        public QuestObject(XmlDocument doc, Form1 form, bool create)
         {
             name = doc.DocumentElement.SelectSingleNode("/quest/name").InnerText;
             story_intro = doc.DocumentElement.SelectSingleNode("/quest/story_intro").InnerText;
             story_outro = doc.DocumentElement.SelectSingleNode("/quest/story_outro").InnerText;
 
-            form.textBox1.Text += "Quest: " + name + Environment.NewLine;
-            form.textBox1.Text += story_intro + Environment.NewLine;
+            if (create)
+            { 
+                form.treeViewQuests.Nodes.Add("Quest: " + name);
+                form.treeViewQuests.Nodes.Add(story_intro);
+            }
+        }
+
+        public void didSomething (Form1 form)
+        {
+            form.treeViewQuests.Nodes.Add(story_outro);
         }
     }
 }

@@ -173,12 +173,12 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TreeView treeViewQuests;
+        public System.Windows.Forms.TreeView treeViewQuests;
         public System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TreeView treeViewInventory;
+        public System.Windows.Forms.TreeView treeViewInventory;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.ProgressBar progressBarHealth;
     }

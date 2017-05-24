@@ -105,7 +105,7 @@ namespace Game_Plop
             this.setHealth(50);
             this.MoveDown();
             this.MoveRight();
-            this.ShowOnMap(Wolf.TextureId, dataGridView1);
+            this.ShowOnMap(type, dataGridView1);
         }
 
 

@@ -24,7 +24,7 @@ namespace Game_Plop
             XmlDocument questXML = new XmlDocument();
             questXML.Load("C:\\Users\\fabia\\Documents\\Visual Studio 2017\\Projects\\Game_Plop\\Game_Plop\\testquest.xml");
 
-            QuestObject quest = new QuestObject(questXML, form);
+            QuestObject quest = new QuestObject(questXML, form, true);
         }
 	}
 }
