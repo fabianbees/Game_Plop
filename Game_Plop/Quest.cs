@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Xml;
 
 namespace Game_Plop
 {
@@ -16,6 +17,14 @@ namespace Game_Plop
 		void HandleCustomEvent(object sender, CustomEventArgs e)
 		{
             //Form1.textBox1.Text += id + " received this message:" + e.Message + Environment.NewLine;
+        }
+
+        public void LoadQuest (Form1 form)
+        {
+            XmlDocument questXML = new XmlDocument();
+            questXML.Load("C:\\Users\\fabia\\Documents\\Visual Studio 2017\\Projects\\Game_Plop\\Game_Plop\\testquest.xml");
+
+            QuestObject quest = new QuestObject(questXML, form);
         }
 	}
 }

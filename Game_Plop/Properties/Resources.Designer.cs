@@ -22,7 +22,7 @@ namespace Game_Plop.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace Game_Plop.Properties {
         ///   Gibt die zwischengespeicherte ResourceManager-Instanz zurück, die von dieser Klasse verwendet wird.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Game_Plop.Properties.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace Game_Plop.Properties {
         ///   Ressourcenzuordnungen, die diese stark typisierte Ressourcenklasse verwenden.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace Game_Plop.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap avatar {
+        public static System.Drawing.Bitmap avatar {
             get {
                 object obj = ResourceManager.GetObject("avatar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -73,7 +73,7 @@ namespace Game_Plop.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap grass {
+        public static System.Drawing.Bitmap grass {
             get {
                 object obj = ResourceManager.GetObject("grass", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -83,7 +83,7 @@ namespace Game_Plop.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap plop {
+        public static System.Drawing.Bitmap plop {
             get {
                 object obj = ResourceManager.GetObject("plop", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -91,9 +91,28 @@ namespace Game_Plop.Properties {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
+        ///&lt;quest&gt;
+        ///  &lt;name&gt;Quest 1&lt;/name&gt;
+        ///  &lt;story_intro&gt;
+        ///    Ich hab&apos; jetzt echt weder Lust noch Zeit hier ne Story hinzuschreiben! Geh einfach den Wolf da töten!!!
+        ///  &lt;/story_intro&gt;
+        ///  &lt;doSomething&gt;&lt;/doSomething&gt;
+        ///  &lt;story_outro&gt;
+        ///    Toll! Du hast die vermutlich einfachste Aufgabe, die wir dir stellen konnten geschafft...
+        ///  &lt;/story_outro&gt;
+        ///&lt;/quest&gt; ähnelt.
+        /// </summary>
+        public static string testquest {
+            get {
+                return ResourceManager.GetString("testquest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap wolf {
+        public static System.Drawing.Bitmap wolf {
             get {
                 object obj = ResourceManager.GetObject("wolf", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));

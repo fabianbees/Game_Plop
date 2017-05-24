@@ -84,6 +84,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Quest.cs" />
+    <Compile Include="QuestObject.cs" />
     <Compile Include="WildBoar.cs" />
     <Compile Include="Wolf.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -91,7 +92,7 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
@@ -109,6 +110,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="testquest.xml" />
     <None Include="Resources\avatar.png" />
     <Content Include="Plop.ico" />
     <Content Include="Resources\grass.jpg" />

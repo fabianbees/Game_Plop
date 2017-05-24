@@ -94,7 +94,7 @@ namespace Game_Plop
             shredder.wuff(this);
             //shredder.plop(this);
             shredder.initialize(3, 9, 50, Wolf.TextureId, dataGridView1);
-
+            quest.LoadQuest(this);
         }
 
         public void updateHealth(int i)
