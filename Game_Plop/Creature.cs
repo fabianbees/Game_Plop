@@ -99,7 +99,14 @@ namespace Game_Plop
 
             }
         }
-
+        
+        public void respawn(String type, DataGridView dataGridView1)
+        {
+            this.setHealth(50);
+            this.MoveDown();
+            this.MoveRight();
+            this.ShowOnMap(Wolf.TextureId, dataGridView1);
+        }
 
 
 

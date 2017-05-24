@@ -265,12 +265,22 @@ namespace Game_Plop
             {
                 //enemy died
                 enemyHealth = 0;
+                button1.Enabled = false;
                 //drop something
 
                 //respawn
-                shredder.initialize(6, 9, 50, Wolf.TextureId, dataGridView1);
+                //shredder.initialize(9, 17, 50, Wolf.TextureId, dataGridView1);
+                /*shredder.setHealth(50);
+                shredder.MoveDown();
+                shredder.MoveRight();
+                shredder.ShowOnMap(Wolf.TextureId, dataGridView1);
+                */
+                shredder.respawn(Wolf.TextureId, dataGridView1);
             }
-            shredder.setHealth(enemyHealth);
+            else
+           {
+                shredder.setHealth(enemyHealth);
+            }
             textBox1.Text += "fight " + collisionObject + " - Health: " + enemyHealth + Environment.NewLine;
             textBox1.Text += "Gesundheit - " + avatarDamage + Environment.NewLine;
             updateHealth(progressBarHealth.Value - avatarDamage);   //Subtract random damage from Avatar health
