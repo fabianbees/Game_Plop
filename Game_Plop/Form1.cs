@@ -251,14 +251,14 @@ namespace Game_Plop
 
                 shredder.respawn("wolf", dataGridView1);
                 KeyLocked = false;
-                //bitte wegsschauen! Ist scheiße gemacht :)
+                //bitte wegsschauen! Ist scheiße gemacht :)                 //Langsam wirds besser :D
 
                 XmlDocument questXML = new XmlDocument();
+                
                 //HardCoded not needed!!!
                 //We have to use LoadXml() instead of Load()
                 //questXML.Load("C:\\Users\\fabia\\Documents\\Visual Studio 2017\\Projects\\Game_Plop\\Game_Plop\\testquest.xml");
-                questXML.LoadXml(Properties.Resources.testquest);
-
+                questXML.LoadXml(Properties.Resources.quest);
 
                 QuestObject quest = new QuestObject(questXML, this, false);
                 quest.didSomething(this);
