@@ -110,6 +110,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\bear.png" />
+    <None Include="Resources\wildboar.png" />
     <Content Include="testquest.xml" />
     <None Include="Resources\avatar.png" />
     <Content Include="Plop.ico" />

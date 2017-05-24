@@ -84,6 +84,8 @@
             this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBox1.Size = new System.Drawing.Size(798, 139);
             this.textBox1.TabIndex = 2;
+            //this.textBox1.SelectionStart = this.textBox1.Text.Length;
+            //this.textBox1.ScrollToCaret();
             // 
             // button1
             // 

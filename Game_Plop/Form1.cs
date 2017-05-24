@@ -45,6 +45,9 @@ namespace Game_Plop
             dataGridView1.ReadOnly = true;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.CellSelect;     //Not sure if correct
             dataGridView1.MultiSelect = false;
+            this.textBox1.SelectionStart = this.textBox1.Text.Length;
+            this.textBox1.ScrollToCaret();
+
 
 
             //Create Image (Background)
@@ -106,6 +109,10 @@ namespace Game_Plop
                 progressBarHealth.Value = 0;
                 me.setHealth(0);
                 textBox1.Text += "You died. Game Over!" + Environment.NewLine;
+                KeyLocked = true;
+                Bitmap plop = new Bitmap(Properties.Resources.plop, new Size(30, 30));
+                dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Value = plop;
+                button3.Enabled = false;
 
             }
             else
@@ -233,7 +240,7 @@ namespace Game_Plop
                     }
                     me.ShowOnMap("avatar", dataGridView1);
                 }
-
+                textBox1_TextChanged(sender, e);
                 KeyisPressed = true;
             }
         }
@@ -257,7 +264,9 @@ namespace Game_Plop
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
+            this.textBox1.Select(textBox1.Text.Length, 0);
+            this.textBox1.ScrollToCaret();
+            textBox1.Refresh();
         }
 
         //Button for fighting
@@ -290,7 +299,8 @@ namespace Game_Plop
             textBox1.Text += "fight " + collisionObject + " - Health: " + enemyHealth + Environment.NewLine;
             textBox1.Text += "Gesundheit - " + avatarDamage + Environment.NewLine;
             updateHealth(progressBarHealth.Value - avatarDamage);   //Subtract random damage from Avatar health
-            
+            textBox1_TextChanged(sender, e);
+
         }
 
         //Button for healing
@@ -298,6 +308,7 @@ namespace Game_Plop
         {
             me.heal(this);
             textBox1.Text += "Gesundheit bei: " + me.getHealth() + Environment.NewLine;
+            textBox1_TextChanged(sender, e);
         }
 
         //Button for collecting items

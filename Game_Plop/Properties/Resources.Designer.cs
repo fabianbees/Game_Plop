@@ -73,6 +73,16 @@ namespace Game_Plop.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap bear {
+            get {
+                object obj = ResourceManager.GetObject("bear", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap grass {
             get {
                 object obj = ResourceManager.GetObject("grass", resourceCulture);
@@ -106,6 +116,16 @@ namespace Game_Plop.Properties {
         public static string testquest {
             get {
                 return ResourceManager.GetString("testquest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap wildboar {
+            get {
+                object obj = ResourceManager.GetObject("wildboar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
