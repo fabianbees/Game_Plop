@@ -113,9 +113,9 @@ namespace Game_Plop.Properties {
         ///  &lt;/story_outro&gt;
         ///&lt;/quest&gt; ähnelt.
         /// </summary>
-        public static string testquest {
+        public static string quest {
             get {
-                return ResourceManager.GetString("testquest", resourceCulture);
+                return ResourceManager.GetString("quest", resourceCulture);
             }
         }
         
