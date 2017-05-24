@@ -10,6 +10,7 @@ namespace Game_Plop
         Wolf shredder = new Wolf();
         public string collisionObject;  //Object the avatar collides with
         Random random = new Random();   //Random damage during attack
+        bool KeyLocked = false;
 
         public Form1()
         {
@@ -157,7 +158,7 @@ namespace Game_Plop
         private void keydown(object sender, KeyEventArgs e)
         {
             Bitmap img = new Bitmap(Properties.Resources.grass, new Size(30, 30));
-            if (!KeyisPressed)
+            if (!KeyisPressed && !KeyLocked)
             {
                 //textBox1.Text += e.KeyCode + Environment.NewLine;
                 if(e.KeyCode == Keys.Right)
@@ -170,6 +171,7 @@ namespace Game_Plop
                         textBox1.Text += "Collision with: " + dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag.ToString() + Environment.NewLine;
                         collisionObject = dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag.ToString();
                         button1.Enabled = true;
+                        KeyLocked = true;
                     }
                     else
                     {
@@ -187,6 +189,7 @@ namespace Game_Plop
                         textBox1.Text += "Collision with: " + dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag.ToString() + Environment.NewLine;
                         collisionObject = dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag.ToString();
                         button1.Enabled = true;
+                        KeyLocked = true;
                     }
                     else
                     {
@@ -204,6 +207,7 @@ namespace Game_Plop
                         textBox1.Text += "Collision with: " + dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag.ToString() + Environment.NewLine;
                         collisionObject = dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag.ToString();
                         button1.Enabled = true;
+                        KeyLocked = true;
                     }
                     else
                     {
@@ -221,6 +225,7 @@ namespace Game_Plop
                         textBox1.Text += "Collision with: " + dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag.ToString() + Environment.NewLine;
                         collisionObject = dataGridView1.Rows[me.getYvalue()].Cells[me.getXvalue()].Tag.ToString();
                         button1.Enabled = true;
+                        KeyLocked = true;
                     }
                     else
                     {
@@ -265,12 +270,23 @@ namespace Game_Plop
             {
                 //enemy died
                 enemyHealth = 0;
+                button1.Enabled = false;
                 //drop something
 
                 //respawn
-                shredder.initialize(6, 9, 50, Wolf.TextureId, dataGridView1);
+                //shredder.initialize(9, 17, 50, Wolf.TextureId, dataGridView1);
+                /*shredder.setHealth(50);
+                shredder.MoveDown();
+                shredder.MoveRight();
+                shredder.ShowOnMap(Wolf.TextureId, dataGridView1);
+                */
+                shredder.respawn(Wolf.TextureId, dataGridView1);
+                KeyLocked = false;
             }
-            shredder.setHealth(enemyHealth);
+            else
+           {
+                shredder.setHealth(enemyHealth);
+            }
             textBox1.Text += "fight " + collisionObject + " - Health: " + enemyHealth + Environment.NewLine;
             textBox1.Text += "Gesundheit - " + avatarDamage + Environment.NewLine;
             updateHealth(progressBarHealth.Value - avatarDamage);   //Subtract random damage from Avatar health
