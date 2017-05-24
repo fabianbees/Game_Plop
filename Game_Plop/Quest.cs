@@ -22,7 +22,11 @@ namespace Game_Plop
         public void LoadQuest (Form1 form)
         {
             XmlDocument questXML = new XmlDocument();
-            questXML.Load("C:\\Users\\fabia\\Documents\\Visual Studio 2017\\Projects\\Game_Plop\\Game_Plop\\testquest.xml");
+            //We have to use LoadXml() instead of Load()
+            //questXML.Load("C:\\Users\\fabia\\Documents\\Visual Studio 2017\\Projects\\Game_Plop\\Game_Plop\\testquest.xml");
+
+            questXML.LoadXml(Properties.Resources.testquest);
+
 
             QuestObject quest = new QuestObject(questXML, form, true);
         }

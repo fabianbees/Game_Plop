@@ -255,8 +255,10 @@ namespace Game_Plop
 
                 XmlDocument questXML = new XmlDocument();
                 //HardCoded not needed!!!
+                //We have to use LoadXml() instead of Load()
                 //questXML.Load("C:\\Users\\fabia\\Documents\\Visual Studio 2017\\Projects\\Game_Plop\\Game_Plop\\testquest.xml");
-                questXML.Load(Properties.Resources.testquest);
+                questXML.LoadXml(Properties.Resources.testquest);
+
 
                 QuestObject quest = new QuestObject(questXML, this, false);
                 quest.didSomething(this);
