@@ -254,7 +254,9 @@ namespace Game_Plop
                 //bitte wegsschauen! Ist scheiße gemacht :)
 
                 XmlDocument questXML = new XmlDocument();
-                questXML.Load("C:\\Users\\fabia\\Documents\\Visual Studio 2017\\Projects\\Game_Plop\\Game_Plop\\testquest.xml");
+                //HardCoded not needed!!!
+                //questXML.Load("C:\\Users\\fabia\\Documents\\Visual Studio 2017\\Projects\\Game_Plop\\Game_Plop\\testquest.xml");
+                questXML.Load(Properties.Resources.testquest);
 
                 QuestObject quest = new QuestObject(questXML, this, false);
                 quest.didSomething(this);
